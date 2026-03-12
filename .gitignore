@@ -1,0 +1,8 @@
+archive/
+
+# Dependencies
+scott-denotter-portfolio/node_modules/
+
+# Build output
+scott-denotter-portfolio/dist/
+scott-denotter-portfolio/.vite/
