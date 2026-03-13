@@ -16,7 +16,7 @@ export default function Navbar() {
       <motion.div 
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
-        className="text-xl font-serif font-bold tracking-tighter"
+        className="text-2xl font-serif font-bold tracking-tighter"
       >
         SCOTT DENOTTER
       </motion.div>

@@ -58,7 +58,7 @@ export default function CaseStudies() {
 
             {/* Content */}
             <div className="md:col-span-6">
-              <h3 className="text-4xl md:text-6xl font-serif mb-8 group-hover:italic transition-all duration-500">
+              <h3 className="text-4xl md:text-6xl font-serif mb-8">
                 {project.title}
               </h3>
               

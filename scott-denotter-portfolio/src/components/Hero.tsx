@@ -54,7 +54,7 @@ export default function Hero() {
         <div className="relative w-full h-full flex items-center justify-center">
           <div className="absolute bottom-0 right-0 w-4/5 h-4/5 border-l border-t border-teal/20" />
           <div className="z-10 text-[15vw] font-serif text-teal/5 select-none">
-            CRAFT
+            
           </div>
         </div>
       </motion.div>

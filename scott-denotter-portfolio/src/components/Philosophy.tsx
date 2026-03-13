@@ -1,6 +1,15 @@
-import { motion } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
+import { useRef } from 'react';
 
 export default function Philosophy() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const yTranslate = useTransform(scrollYProgress, [0, 1], [40, -40]);
+
   const principles = [
     {
       title: "Diagnosis First",
@@ -21,61 +30,69 @@ export default function Philosophy() {
   ];
 
   return (
-    <section id="philosophy" className="py-20 px-6 md:px-12 bg-teal text-parchment relative overflow-hidden">
-      {/* Background Text */}
-      <div className="absolute top-0 left-0 text-[30vw] font-serif opacity-10 select-none pointer-events-none -translate-y-1/2">
-        PILLARS
+    <section
+      ref={containerRef}
+      id="philosophy"
+      className="py-24 px-6 md:px-12 relative overflow-hidden bg-teal border-t border-umber/10"
+      
+    >
+      {/* Dot grid overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(175, 219, 188, 0.06) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}
+      />
+
+      {/* Twin gold buildings accent — left side bleed */}
+      <div className="absolute top-0 left-0 w-[55%] h-full pointer-events-none select-none overflow-hidden hidden md:block">
+        <motion.img
+          style={{ y: yTranslate }}
+          src="/design/images/twin_gold_buildings.jpg"
+          alt=""
+          className="absolute top-0 left-0 w-full h-[120%] object-cover object-center opacity-[0.12] mix-blend-soft-light"
+        />
+        
       </div>
 
-      {/* Building image rotated 90deg — tower lying across full width */}
-      <div
-        className="absolute bottom-0 left-0 w-full pointer-events-none select-none"
-        style={{ height: '30vh', clipPath: 'inset(0)' }}
-      >
-        <img
-          src="/design/images/Desktop.png"
-          alt=""
-          className="absolute opacity-[0.28]"
-          style={{
-            height: '100vw',
-            width: 'auto',
-            bottom: 0,
-            left: '70%',
-            transformOrigin: 'center bottom',
-            transform: 'translateX(-50%) rotate(-90deg)',
-          }}
-        />
-      </div>
+      {/* Top fade — blends from hero parchment into teal */}
+      
+      {/* Bottom vignette */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#2a8fa5]/60 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <span className="text-xs uppercase tracking-[0.5em] mb-4 block opacity-60">Brand Pillars</span>
-          <h2 className="text-5xl md:text-7xl font-serif max-w-3xl">
-            The non-negotiable truths of the craft.
+        <div className="mb-16">
+          <span className="text-xs uppercase tracking-[0.5em] mb-4 block opacity-50 font-mono text-mint">Brand Pillars</span>
+          <h2 className="text-5xl md:text-8xl font-serif max-w-4xl leading-[1.1] text-parchment">
+            The non-negotiable <br className="hidden md:block" />
+            <span className="italic">truths</span> of the craft.
           </h2>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16">
+        {/* Decorative divider */}
+        <div className="w-full h-px bg-gradient-to-r from-mint/30 via-mint/10 to-transparent mb-10" />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {principles.map((p, i) => (
-            <motion.div
+            <div
               key={p.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group"
+              className="group rounded-lg p-8 border border-white/[0.08] bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur-sm transition-all duration-500"
             >
-              <div className="text-sienna font-serif text-4xl mb-6">0{i + 1}</div>
-              <h3 className="text-2xl font-serif mb-4 group-hover:text-sienna transition-colors">{p.title}</h3>
-              <p className="text-sm leading-relaxed opacity-80 font-mono">
+              <div className="text-burgundy font-serif text-6xl mb-8 opacity-40 group-hover:opacity-100 group-hover:text-mint transition-all duration-500">
+                0{i + 1}
+              </div>
+
+              <h3 className="text-2xl font-serif mb-6 text-parchment group-hover:text-mint transition-colors duration-300">
+                {p.title}
+              </h3>
+
+              <p className="text-sm leading-relaxed text-sage font-mono group-hover:text-parchment transition-colors">
                 {p.description}
               </p>
-            </motion.div>
+
+              <div className="w-12 h-[1px] bg-mint mt-8 origin-left scale-x-50 group-hover:scale-x-100 transition-transform duration-500" />
+            </div>
           ))}
         </div>
       </div>
