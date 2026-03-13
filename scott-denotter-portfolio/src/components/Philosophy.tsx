@@ -27,13 +27,23 @@ export default function Philosophy() {
         PILLARS
       </div>
 
-      {/* Mirrored building image */}
-      <div className="absolute right-0 bottom-0 w-1/2 h-full pointer-events-none select-none">
+      {/* Building image rotated 90deg — tower lying across full width */}
+      <div
+        className="absolute bottom-0 left-0 w-full pointer-events-none select-none"
+        style={{ height: '30vh', clipPath: 'inset(0)' }}
+      >
         <img
           src="/design/images/Desktop.png"
           alt=""
-          className="w-full h-full object-cover object-bottom opacity-10 mix-blend-overlay"
-          style={{ transform: 'scaleX(-1)' }}
+          className="absolute opacity-[0.28]"
+          style={{
+            height: '100vw',
+            width: 'auto',
+            bottom: 0,
+            left: '70%',
+            transformOrigin: 'center bottom',
+            transform: 'translateX(-50%) rotate(-90deg)',
+          }}
         />
       </div>
 
