@@ -1,5 +1,7 @@
 archive/
-
+.claude/
+.agents/
+design/
 # Dependencies
 scott-denotter-portfolio/node_modules/
 
