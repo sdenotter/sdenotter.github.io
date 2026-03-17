@@ -4,29 +4,26 @@ export default function CaseStudies() {
   const projects = [
     {
       title: "The Monolith Diagnosis",
-      problem: "A legacy system with 40% downtime. The client asked for a rewrite; I diagnosed a structural failure in the data layer.",
-      outcome: "Stabilized the existing system in 3 weeks, saving $200k in unnecessary rewrite costs.",
-      tech: "Node.js, PostgreSQL, Redis",
+      description: "Diagnosed a structural failure in a legacy system experiencing 40% downtime. Instead of indulging an expensive full-system rewrite, I stabilized the existing data layer in 3 weeks, saving the client $200k in unnecessary costs.",
+      tech: "Node.js · PostgreSQL · Redis",
       color: "burgundy"
     },
     {
       title: "Operational Clarity",
-      problem: "A mid-size logistics firm running on 14 disconnected spreadsheets. Errors were costing 5% of revenue.",
-      outcome: "Built a unified diagnostic dashboard and automated workflow. Error rate dropped to <0.1%.",
-      tech: "Go, Kubernetes, AWS",
+      description: "Replaced 14 disconnected spreadsheets for a mid-size logistics firm with a unified diagnostic dashboard and automated workflow. This streamlined operations and dropped their revenue-draining error rate from 5% to <0.1%.",
+      tech: "Go · Kubernetes · AWS",
       color: "sienna"
     },
     {
       title: "Simplicity Audit",
-      problem: "Internal teams overwhelmed by an over-engineered microservices architecture they didn't need.",
-      outcome: "Consolidated 12 services into 3, reducing operational overhead by 70%.",
-      tech: "React, TypeScript, Prometheus",
+      description: "Conducted a simplicity audit for internal teams overwhelmed by an over-engineered microservices architecture. Consolidated 12 services down to 3, cutting their operational overhead by 70%.",
+      tech: "React · TypeScript · Prometheus",
       color: "teal"
     }
   ];
 
   return (
-    <section id="case-studies" className="py-32 px-6 md:px-12 max-w-7xl mx-auto">
+    <section id="case-studies" className="py-32 pl-6 md:pl-16 pr-6 md:pr-12 max-w-5xl">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -63,13 +60,10 @@ export default function CaseStudies() {
               </h3>
               
               <div className="space-y-8">
+                <p className="text-lg leading-relaxed">{project.description}</p>
                 <div>
-                  <h4 className="text-xs uppercase tracking-widest opacity-40 mb-2">The Problem</h4>
-                  <p className="text-lg leading-relaxed">{project.problem}</p>
-                </div>
-                <div>
-                  <h4 className="text-xs uppercase tracking-widest opacity-40 mb-2">The Outcome</h4>
-                  <p className="text-lg leading-relaxed font-serif italic text-burgundy">{project.outcome}</p>
+                  <h4 className="text-xs uppercase tracking-widest opacity-40 mb-2">Tags</h4>
+                  <p className="text-sm font-mono opacity-60">{project.tech}</p>
                 </div>
               </div>
             </div>

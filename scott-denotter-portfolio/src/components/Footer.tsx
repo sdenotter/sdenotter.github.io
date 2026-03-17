@@ -14,7 +14,7 @@ export default function Footer() {
             <a href="mailto:scott.denotter1@gmail.com" className="text-2xl font-serif hover:text-burgundy transition-colors block underline underline-offset-8">
               scott.denotter1@gmail.com
             </a>
-            <p className="text-sm opacity-60 font-mono">Based in the intersection of logic and design. Building for SMBs who value stability.</p>
+            <p className="text-sm opacity-60 font-mono">Operating at the intersection of logic and design. I build resilient software for SMBs who value stability over hype.</p>
           </div>
         </div>
 
@@ -40,7 +40,7 @@ export default function Footer() {
 
           <div className="mt-24 pt-12 border-t border-teal/5 flex justify-between items-center text-[10px] uppercase tracking-widest opacity-40">
             <div>© 2026 Scott Denotter</div>
-            <div>Built with Architectural Precision</div>
+            <div>Designed with architectural precision and coded in Visual Studio Code.</div>
           </div>
         </div>
       </div>

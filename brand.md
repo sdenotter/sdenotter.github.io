@@ -1,9 +1,6 @@
 # Brand Guidelines
 
-**Version 1.0 — 2025**
-
-> ### The Core Idea
-> Most developers build what you ask for. Scott figures out what you actually need — then builds the simplest thing that solves it.
+> 
 
 ---
 
@@ -13,15 +10,7 @@
 
 Your name is your brand. It is distinctive, memorable, and professional. It builds a personal reputation that compounds over time — clients refer 'Scott', not a faceless agency. This is the right choice for your primary audience of SMBs who buy based on trust in a person, not a logo.
 
-### Agency / Studio Alternatives
 
-If you ever want to position work under a studio name — for larger engagements, subcontracting, or future growth — the following names are grounded in the same brand idea: diagnosis before prescription, simplicity over complexity, operational clarity.
-
-| Name | Brand Feeling |
-| :--- | :--- |
-| **Clearwork Studio** | Evokes clarity, operational work, and getting things done. Clean and professional. |
-| **Root Cause Tech** | Signals your diagnostic methodology directly. Memorable and differentiated. |
-| **Groundwork Systems** | Implies foundational, reliable infrastructure work — appeals to SMBs who want stability. |
 
 ---
 
@@ -29,7 +18,7 @@ If you ever want to position work under a studio name — for larger engagements
 
 ### Primary Tagline
 
-> _**Less system. More solution.**_
+> # Fix the process. Not just the code.
 
 This tagline does three things simultaneously: it signals your preference for simplicity over complexity, it speaks directly to clients who feel overwhelmed by their own processes, and it subtly positions you against developers who over-engineer. It is both a promise and a philosophy.
 

@@ -12,15 +12,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 px-6 py-8 md:px-12 flex justify-between items-center mix-blend-multiply">
-      <motion.div 
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        className="text-2xl font-serif font-bold tracking-tighter"
-      >
-        SCOTT DENOTTER
-      </motion.div>
-
+    <nav className="fixed top-0 left-0 w-full z-50 px-6 py-8 md:px-12 flex justify-end items-center mix-blend-multiply">
       {/* Desktop Nav */}
       <div className="hidden md:flex space-x-12">
         {navLinks.map((link, i) => (
@@ -30,7 +22,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1 }}
-            className="text-sm uppercase tracking-widest hover:text-burgundy transition-colors duration-300"
+            className="text-lg uppercase tracking-widest hover:text-burgundy transition-colors duration-300"
           >
             {link.name}
           </motion.a>

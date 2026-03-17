@@ -13,19 +13,19 @@ export default function Philosophy() {
   const principles = [
     {
       title: "Diagnosis First",
-      description: "Understand before you build. Scott's first question is never 'what do you want built?' It's 'what's actually going wrong?' The diagnostic process is the product, not a free add-on."
+      description: "I need to understand before I build. My first question is never \"what do you want built?\" It's \"what's actually going wrong?\" To me, the diagnostic process is the core product, not just a free add-on."
     },
     {
       title: "Simplicity as Craft",
-      description: "The simplest working solution is the best solution. It takes more skill to resist over-engineering than to indulge it. Scott regularly talks clients down from complexity they don't need."
+      description: "The simplest working solution is always the best solution. It takes more skill to resist over-engineering than to indulge it, so I frequently work with clients to cut away complexity they don't actually need."
     },
     {
       title: "Outcome First",
-      description: "Clients don't buy code. They buy results. Every project is framed around what changed for the business — time saved, errors eliminated, decisions made faster."
+      description: "You aren't buying code; you're buying results. I frame every project around what actually changes for your business—whether that's time saved, costly errors eliminated, or decisions made faster."
     },
     {
       title: "Honest Expertise",
-      description: "Be the expert who tells the truth. Credibility comes from candour, not credentials. Scott understands the craft deeply enough to teach it, which provides proof of expertise."
+      description: "I strive to be the expert who tells the truth. Credibility comes from candour, not just credentials. I understand the craft deeply enough to teach it, and I bring that transparency into every client partnership."
     }
   ];
 
@@ -33,7 +33,7 @@ export default function Philosophy() {
     <section
       ref={containerRef}
       id="philosophy"
-      className="py-24 px-6 md:px-12 relative overflow-hidden bg-teal border-t border-umber/10"
+      className="py-24 px-6 md:px-12 relative overflow-hidden bg-teal shadow-[0_-20px_50px_rgba(0,0,0,0.4)] z-10 border-t border-umber/20"
       
     >
       {/* Dot grid overlay */}
@@ -66,7 +66,7 @@ export default function Philosophy() {
           <span className="text-xs uppercase tracking-[0.5em] mb-4 block opacity-50 font-mono text-mint">Brand Pillars</span>
           <h2 className="text-5xl md:text-8xl font-serif max-w-4xl leading-[1.1] text-parchment">
             The non-negotiable <br className="hidden md:block" />
-            <span className="italic">truths</span> of the craft.
+            <span className="italic">truths</span> of my craft.
           </h2>
         </div>
 
