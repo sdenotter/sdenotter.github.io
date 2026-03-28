@@ -1,10 +1,26 @@
-archive/
+node_modules/
+dist/
+coverage/
+.vite/
+.cache/
+.turbo/
+.vercel/
+.netlify/
 .claude/
 .agents/
-design/
-# Dependencies
-scott-denotter-portfolio/node_modules/
-
-# Build output
-scott-denotter-portfolio/dist/
-scott-denotter-portfolio/.vite/
+archive/
+scott-denotter-portfolio/
+brand.md
+copy.md
+handoff.md
+repo.txt
+tmp.md
+skills-lock.json
+.env*
+*.log
+*.tmp
+*.swp
+*.swo
+.DS_Store
+.idea/
+.vscode/
