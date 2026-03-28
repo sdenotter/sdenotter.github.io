@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
+import BrandLabel from './BrandLabel';
 
 export default function Philosophy() {
   const containerRef = useRef(null);
@@ -12,30 +13,26 @@ export default function Philosophy() {
 
   const principles = [
     {
-      title: "Diagnosis First",
-      description: "I need to understand before I build. My first question is never \"what do you want built?\" It's \"what's actually going wrong?\" To me, the diagnostic process is the core product, not just a free add-on."
+      title: "Functional Core, Imperative Shell",
+      description: "I separate pure business logic from side effects by design. The core — all decisions, transformations, and rules — is written as pure functions with no I/O. The shell handles databases, APIs, and user input. This means the critical paths of every system are trivially testable, predictable, and easy to reason about."
     },
     {
-      title: "Simplicity as Craft",
-      description: "The simplest working solution is always the best solution. It takes more skill to resist over-engineering than to indulge it, so I frequently work with clients to cut away complexity they don't actually need."
+      title: "Data Driven Design",
+      description: "Every architectural decision is grounded in real usage data and measured outcomes — not assumptions, trends, or gut feel."
     },
     {
-      title: "Outcome First",
-      description: "You aren't buying code; you're buying results. I frame every project around what actually changes for your business—whether that's time saved, costly errors eliminated, or decisions made faster."
-    },
-    {
-      title: "Honest Expertise",
-      description: "I strive to be the expert who tells the truth. Credibility comes from candour, not just credentials. I understand the craft deeply enough to teach it, and I bring that transparency into every client partnership."
+      title: "Test Driven Development",
+      description: "Tests are written before implementation, so the design is proven correct by construction, not retrofitted after the fact."
     }
   ];
 
   return (
     <section
       ref={containerRef}
-      id="philosophy"
+      id="how-i-work"
       className="py-24 px-6 md:px-12 relative overflow-hidden bg-teal shadow-[0_-20px_50px_rgba(0,0,0,0.4)] z-10 border-t border-umber/20"
-      
     >
+      <BrandLabel colorClass="text-parchment" />
       {/* Dot grid overlay */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -63,10 +60,9 @@ export default function Philosophy() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-16">
-          <span className="text-xs uppercase tracking-[0.5em] mb-4 block opacity-50 font-mono text-mint">Brand Pillars</span>
+          <span className="text-xs uppercase tracking-[0.5em] mb-4 block opacity-50 font-mono text-mint">The Method</span>
           <h2 className="text-5xl md:text-8xl font-serif max-w-4xl leading-[1.1] text-parchment">
-            The non-negotiable <br className="hidden md:block" />
-            <span className="italic">truths</span> of my craft.
+            How I build.
           </h2>
         </div>
 

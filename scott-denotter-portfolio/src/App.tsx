@@ -4,10 +4,9 @@
  */
 
 import Navbar from './components/Navbar';
-import BrandLabel from './components/BrandLabel';
 import Hero from './components/Hero';
-import Philosophy from './components/Philosophy';
-import CaseStudies from './components/CaseStudies';
+import Method from './components/Method';
+import Projects from './components/Projects';
 import Footer from './components/Footer';
 import { motion, useScroll, useSpring } from 'motion/react';
 
@@ -43,12 +42,11 @@ export default function App() {
       />
 
       <Navbar />
-      <BrandLabel />
       
       <main>
         <Hero />
-        <Philosophy />
-        <CaseStudies />
+        <Method />
+        <Projects />
       </main>
 
       <Footer />
