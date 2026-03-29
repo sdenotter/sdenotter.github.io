@@ -17,29 +17,29 @@ This repo already includes a GitHub Actions workflow at [`.github/workflows/depl
 
 - The workflow runs on pushes to `main`.
 - It installs dependencies with `npm ci`.
-- It builds the site with `VITE_BASE_PATH=/<repo-name>/`.
+- It builds the site with `VITE_BASE_PATH=/`.
 - It uploads `dist/` and deploys it to GitHub Pages.
 
-### Standard project site URL
+### User site URL
 
-For this repository, the site URL will normally be:
+For the `sdenotter.github.io` repository, the site URL is:
 
 ```text
-https://sdenotter.github.io/snd_site/
+https://sdenotter.github.io/
 ```
 
-### If you use a custom domain
+### If you later deploy this code as a project site instead
 
-If you later switch to a custom domain, or convert this to a user site like `sdenotter.github.io`, update the workflow so:
+If you move the same code into a project repo like `snd_site`, update the build step so:
+
+```yaml
+VITE_BASE_PATH: /snd_site/
+```
+
+instead of the user-site setting:
 
 ```yaml
 VITE_BASE_PATH: /
-```
-
-instead of:
-
-```yaml
-VITE_BASE_PATH: /${{ github.event.repository.name }}/
 ```
 
 ## Cloudflare Pages
@@ -89,6 +89,7 @@ npm run preview
 
 ## Notes
 
-- GitHub Pages usually needs `VITE_BASE_PATH` set to the repo name for project sites.
+- GitHub Pages user sites like `sdenotter.github.io` should use `VITE_BASE_PATH=/`.
+- GitHub Pages project sites like `username.github.io/repo-name/` should use `VITE_BASE_PATH=/repo-name/`.
 - Cloudflare Pages should usually use `VITE_BASE_PATH=/`.
 - If assets or routes look broken after deployment, the first thing to check is the configured base path.
