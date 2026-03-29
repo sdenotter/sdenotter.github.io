@@ -15,31 +15,21 @@ export default function CaseStudies() {
       description: "A framework for agentic development built around detailed, structured specs generated before any code is written. Feedback loops at each stage keep the agent aligned with intent — reducing drift, hallucination, and rework across long-running tasks.",
       tech: "Python · LLM · Agents",
       color: "burgundy",
-      screenshots: [
-        "/screenshots/sdd-1.png",
-        "/screenshots/sdd-2.png",
-        "/screenshots/sdd-3.png",
-      ]
+      screenshots: []
     },
     {
       title: "RepoLens",
       description: "Uses text embeddings to project semantic views over a codebase — automatically assigning meaningful labels like 'frontend', 'backend', or 'data layer' based on what the code actually does, not where it lives. Built to make unfamiliar repos navigable at a glance.",
       tech: "Python · Embeddings · OpenAI",
       color: "sienna",
-      screenshots: [
-        "/screenshots/repolens-1.png",
-        "/screenshots/repolens-2.png",
-      ]
+      screenshots: []
     },
     {
       title: "Sieve",
       description: "A structured CLI layer over Codex that gives agents a constrained, sandboxed interface for data analysis — keeping execution paths clean, reproducible, and auditable without requiring a full notebook environment.",
       tech: "Python · Codex · CLI",
       color: "teal",
-      screenshots: [
-        "/screenshots/sieve-1.png",
-        "/screenshots/sieve-2.png",
-      ]
+      screenshots: []
     }
   ];
 
@@ -62,6 +52,7 @@ export default function CaseStudies() {
         {projects.map((project, i) => {
           const current = getScreenshot(i);
           const total = project.screenshots.length;
+          const hasScreenshots = total > 0;
 
           return (
             <motion.div
@@ -99,27 +90,39 @@ export default function CaseStudies() {
                     {project.title}
                   </span>
                   <span className="text-[9px] font-mono opacity-30 tabular-nums">
-                    {String(current + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+                    {hasScreenshots
+                      ? `${String(current + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`
+                      : 'No screenshots yet'}
                   </span>
                 </div>
 
                 {/* Image area */}
                 <div className="relative border border-teal/20 overflow-hidden aspect-[16/10] bg-teal/[0.03]">
-                  <AnimatePresence mode="wait">
-                    <motion.img
-                      key={current}
-                      src={project.screenshots[current]}
-                      alt={`${project.title} screenshot ${current + 1}`}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.25 }}
-                      className="absolute inset-0 w-full h-full object-cover object-top"
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).style.display = 'none';
-                      }}
-                    />
-                  </AnimatePresence>
+                  {hasScreenshots ? (
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={current}
+                        src={project.screenshots[current]}
+                        alt={`${project.title} screenshot ${current + 1}`}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="absolute inset-0 w-full h-full object-cover object-top"
+                      />
+                    </AnimatePresence>
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
+                      <div>
+                        <div className="text-[10px] font-mono uppercase tracking-[0.35em] opacity-40">
+                          Screenshot Gallery
+                        </div>
+                        <div className="mt-3 text-sm font-mono opacity-50">
+                          To be added.
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
                   {/* Corner accents */}
                   <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-teal/30 pointer-events-none" />
@@ -151,14 +154,14 @@ export default function CaseStudies() {
                     <button
                       onClick={() => setScreenshot(i, (current - 1 + total) % total)}
                       className="px-4 py-2 text-[9px] font-mono uppercase tracking-[0.3em] opacity-40 hover:opacity-100 transition-opacity duration-200 hover:bg-teal/10 disabled:pointer-events-none"
-                      disabled={total <= 1}
+                      disabled={!hasScreenshots || total <= 1}
                     >
                       ← Prev
                     </button>
                     <button
                       onClick={() => setScreenshot(i, (current + 1) % total)}
                       className="px-4 py-2 text-[9px] font-mono uppercase tracking-[0.3em] opacity-40 hover:opacity-100 transition-opacity duration-200 hover:bg-teal/10 disabled:pointer-events-none"
-                      disabled={total <= 1}
+                      disabled={!hasScreenshots || total <= 1}
                     >
                       Next →
                     </button>

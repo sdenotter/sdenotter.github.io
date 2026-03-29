@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
+import twinGoldBuildings from '../assets/design/twin-gold-buildings.jpg';
 import BrandLabel from './BrandLabel';
 
 export default function Philosophy() {
@@ -46,7 +47,7 @@ export default function Philosophy() {
       <div className="absolute top-0 left-0 w-[55%] h-full pointer-events-none select-none overflow-hidden hidden md:block">
         <motion.img
           style={{ y: yTranslate }}
-          src="/design/images/twin_gold_buildings.jpg"
+          src={twinGoldBuildings}
           alt=""
           className="absolute top-0 left-0 w-full h-[120%] object-cover object-center opacity-[0.12] mix-blend-soft-light"
         />

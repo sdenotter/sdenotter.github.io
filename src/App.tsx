@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import desktopBackground from './assets/design/desktop.png';
+import mobileBackground from './assets/design/mobile.png';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Method from './components/Method';
@@ -23,9 +25,9 @@ export default function App() {
       {/* Fixed hero background — image stays pinned, text scrolls away */}
       <div className="fixed inset-0 -z-20">
         <picture>
-          <source media="(max-width: 768px)" srcSet="/design/images/mobile.png" />
+          <source media="(max-width: 768px)" srcSet={mobileBackground} />
           <img
-            src="/design/images/Desktop.png"
+            src={desktopBackground}
             alt=""
             className="w-full h-full object-cover object-bottom opacity-50 mix-blend-multiply"
           />
@@ -53,4 +55,3 @@ export default function App() {
     </div>
   );
 }
-

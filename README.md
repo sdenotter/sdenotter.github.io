@@ -63,7 +63,6 @@ If you later use a custom domain or a user/organization Pages site like `usernam
 
 ```text
 src/           App source
-design/        Shipped image assets
-screenshots/   Project screenshots used by the site
+src/assets/    Bundled image assets
 dist/          Production build output
 ```
